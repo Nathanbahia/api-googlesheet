@@ -1,0 +1,13 @@
+language: python
+dist: xenial
+sudo: true
+
+python:
+ - 3.8
+
+script:
+ - flake8 source
+ - pytest test_api.py --cov=source
+
+after success:
+ - codecov -t "19831529-a350-4d16-8280-44e168bc99da"
